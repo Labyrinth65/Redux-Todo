@@ -1,0 +1,32 @@
+.App {
+	text-align: center;
+}
+
+.todo {
+	display: flex;
+	li {
+		width: 15%;
+	}
+	.true {
+		text-decoration: line-through;
+	}
+	.toggle {
+		margin: 0 1%;
+	}
+	.toggle:hover {
+		cursor: pointer;
+	}
+	.delete {
+		margin: 0 1%;
+	}
+	.delete:hover {
+		cursor: pointer;
+	}
+}
+
+.footer {
+	display: flex;
+	.filterButtons {
+		margin: 1%;
+	}
+}

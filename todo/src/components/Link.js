@@ -7,7 +7,7 @@ const Link = ({ active, children, onClick }) => {
 	}
 
 	return (
-		<a
+		<button
 			href=""
 			onClick={e => {
 				e.preventDefault();
@@ -15,7 +15,7 @@ const Link = ({ active, children, onClick }) => {
 			}}
 		>
 			{children}
-		</a>
+		</button>
 	);
 };
 

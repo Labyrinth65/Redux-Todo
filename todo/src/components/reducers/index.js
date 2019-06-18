@@ -2,9 +2,11 @@ import { combineReducers } from "redux";
 import {
 	ADD_TODO,
 	TOGGLE_TODO,
+	DELETE_TODO,
 	SET_VISIBILITY_FILTER,
 	VisibilityFilters
 } from "../actions";
+
 const { SHOW_ALL } = VisibilityFilters;
 
 function visibilityFilter(state = SHOW_ALL, action) {
@@ -35,6 +37,11 @@ function todos(state = [], action) {
 				}
 				return todo;
 			});
+		case DELETE_TODO:
+			// return (state = state
+			// 	.slice(0, action.index)
+			// 	.concat(state.slice(action.index + 1)));
+			return (state = state.filter((todo, index) => index !== action.index));
 		default:
 			return state;
 	}
