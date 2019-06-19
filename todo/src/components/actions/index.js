@@ -21,18 +21,18 @@ export const VisibilityFilters = {
  * action creators
  */
 
-export function addTodo(text) {
+export const addTodo = text => {
 	return { type: ADD_TODO, text };
-}
+};
 
-export function toggleTodo(index) {
+export const toggleTodo = index => {
 	return { type: TOGGLE_TODO, index };
-}
+};
 
-export function setVisibilityFilter(filter) {
+export const setVisibilityFilter = filter => {
 	return { type: SET_VISIBILITY_FILTER, filter };
-}
+};
 
-export function deleteTodo(index) {
+export const deleteTodo = index => {
 	return { type: DELETE_TODO, index };
-}
+};
