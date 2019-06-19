@@ -28,24 +28,35 @@ function todos(state = [], action) {
 					completed: false
 				}
 			];
+		// case TOGGLE_TODO:
+		// 	return state.map((todo, index) => {
+		// 		if (index === action.index) {
+		// 			return Object.assign({}, todo, {
+		// 				completed: !todo.completed
+		// 			});
+		// 		}
+		// 		return todo;
+		// 	});
 		case TOGGLE_TODO:
-			return state.map((todo, index) => {
-				if (index === action.index) {
-					return Object.assign({}, todo, {
-						completed: !todo.completed
-					});
-				}
-				return todo;
-			});
+			return [...state].map((todo, index) =>
+				index === action.index ? { ...todo, completed: !todo.completed } : todo
+			);
 		case DELETE_TODO:
 			// return (state = state
 			// 	.slice(0, action.index)
 			// 	.concat(state.slice(action.index + 1)));
-			return (state = state.filter((todo, index) => index !== action.index));
+			return [...state].filter((todo, index) => index !== action.index);
 		default:
 			return state;
 	}
 }
+
+// function todoApp(state = {}, action) {
+// 	return {
+// 		visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+// 		todos: todos(state.todos, action)
+// 	};
+// }
 
 const todoApp = combineReducers({
 	visibilityFilter,
