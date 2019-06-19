@@ -17,7 +17,7 @@ Todo.propTypes = {
 	onClick: PropTypes.func.isRequired,
 	completed: PropTypes.bool.isRequired,
 	text: PropTypes.string.isRequired,
-	delete: PropTypes.func.isRequired
+	deleteTodo: PropTypes.func.isRequired
 };
 
 export default Todo;
